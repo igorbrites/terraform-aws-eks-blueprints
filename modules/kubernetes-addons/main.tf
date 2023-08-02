@@ -391,7 +391,7 @@ module "kube_prometheus_stack" {
 module "portworx" {
   count         = var.enable_portworx ? 1 : 0
   source        = "portworx/portworx-addon/eksblueprints"
-  version       = "0.0.6"
+  version       = "0.0.7"
   helm_config   = var.portworx_helm_config
   addon_context = local.addon_context
 }
@@ -442,7 +442,7 @@ module "strimzi_kafka_operator" {
 
 module "sysdig_agent" {
   source  = "sysdiglabs/sysdig-addon/eksblueprints"
-  version = "0.0.3"
+  version = "0.0.7"
 
   count         = var.enable_sysdig_agent ? 1 : 0
   helm_config   = var.sysdig_agent_helm_config
